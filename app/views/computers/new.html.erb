@@ -16,12 +16,23 @@
     <%= f.text_field :model %>
   </p>
   <p>
-    <label>DEPARTMENTS</label>
 	<% for hardware_assign in @computer.hardware_assigns %>
 	  <% fields_for "computer[hardware_assign_attributes][]", hardware_assign do |hardware_assign_form| %>
-	    <%= hardware_assign_form.collection_select :department_id, Department.all, :id, :name %>
+	    <p>
+	      <label>DEPARTMENTS</label>
+	      <%= hardware_assign_form.collection_select :department_id, Department.all, :id, :name %>
+	    </p>
+	    <p>
+	      <label>USERS</label>
+		  <%= hardware_assign_form.collection_select :user_id, User.all, :id, :name %>
+	    </p>
+	    <p>
+	      <label>PRIMARY COMPUTER</label>
+		  <%= hardware_assign_form.select :primary_computer, [["Yes",true],["No",false]] %>
+	    </p>
 	  <% end %>
 	<% end %>
+  <p>
   <p>
     <%= f.submit "Create" %>
   </p>
