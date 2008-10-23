@@ -1,0 +1,20 @@
+<p>
+  <b>COMPUTERS:</b>
+</p
+
+<table cellspacing="0">
+<% for hardware_assign in hardware_assigns %>
+  <tr id="<%= dom_id(hardware_assign) %>">
+	<td>
+	  <%= hardware_assign.computer.control unless hardware_assign.computer.nil? %>	
+	</td>
+	<td>
+	  <%= hardware_assign.computer.serial unless hardware_assign.computer.nil? %>	
+	</td>
+	<td>
+	  <%= hardware_assign.computer.model unless hardware_assign.computer.nil? %>	
+	</td>
+	<td class="added_on">Added on: <%= hardware_assign.created_at %></td>
+  </tr>
+<% end %>
+</table>

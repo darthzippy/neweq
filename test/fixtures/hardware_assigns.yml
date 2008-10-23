@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  computer_id: 
+  user_id: 
+  primary_computer: false
+
+two:
+  computer_id: 
+  user_id: 
+  primary_computer: false

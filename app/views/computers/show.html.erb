@@ -1,0 +1,29 @@
+<p>
+  <b>Control:</b>
+  <%=h @computer.control %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%=h @computer.serial %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @computer.model %>
+</p>
+
+<div id="departments">
+  <%= render :partial => 'departments/departments',
+ 			 :locals  => {:hardware_assigns  => @computer.hardware_assigns,
+						  :computer     => @computer } %>	
+</div>
+
+<div id="hardware_assignments_users">
+  <%= render :partial => 'hardware_assigns/hardware_assigns_users',
+ 			 :locals  => {:hardware_assigns  => @computer.hardware_assigns,
+						  :computer     => @computer } %>	
+</div>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>

@@ -1,0 +1,24 @@
+<h1>Editing computer</h1>
+
+<% form_for(@computer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :control %><br />
+    <%= f.text_field :control %>
+  </p>
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @computer %> |
+<%= link_to 'Back', computers_path %>
