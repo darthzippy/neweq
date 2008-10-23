@@ -19,11 +19,7 @@
 						  :computer     => @computer } %>	
 </div>
 
-<div id="hardware_assignments_users">
-  <%= render :partial => 'hardware_assigns/hardware_assigns_users',
- 			 :locals  => {:hardware_assigns  => @computer.hardware_assigns,
-						  :computer     => @computer } %>	
-</div>
+
 
 <%= link_to 'Edit', edit_computer_path(@computer) %> |
 <%= link_to 'Back', computers_path %>

@@ -1,6 +1,6 @@
 <h1>New computer</h1>
 
-<% form_for(@computer, @hardware_assign) do |f| %>
+<% form_for(@computer) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -16,13 +16,16 @@
     <%= f.text_field :model %>
   </p>
   <p>
+    <label>DEPARTMENTS</label>
+	<% for hardware_assign in @computer.hardware_assigns %>
+	  <% fields_for "computer[hardware_assign_attributes][]", hardware_assign do |hardware_assign_form| %>
+	    <%= hardware_assign_form.collection_select :department_id, Department.all, :id, :name %>
+	  <% end %>
+	<% end %>
+  <p>
     <%= f.submit "Create" %>
   </p>
-  <p>
-    <label>DEPARTMENTS</label>
-    <%= f.collection_select :hardware_assign, :department_id, Department.find(:all), :id, :name %>
-  </p>
-  <%= f.submit 'Add this department' %>
+
 <% end -%>
 
 <%= link_to 'Back', computers_path %>	

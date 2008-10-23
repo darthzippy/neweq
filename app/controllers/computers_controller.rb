@@ -25,7 +25,7 @@ class ComputersController < ApplicationController
   # GET /computers/new.xml
   def new
     @computer = Computer.new
-    @hardware_assign = HardwareAssign.new
+    @computer.hardware_assigns.build
 
     respond_to do |format|
       format.html # new.html.erb

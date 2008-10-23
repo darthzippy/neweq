@@ -9,4 +9,10 @@ class Computer < ActiveRecord::Base
   has_many :hardware_assigns
   has_many :users, :through => :hardware_assigns
   has_many :departments, :through => :hardware_assigns
+  
+  def hardware_assign_attributes=(hardware_assign_attributes)
+    hardware_assign_attributes.each do |attributes|
+      hardware_assigns.build(attributes)
+    end
+  end
 end
