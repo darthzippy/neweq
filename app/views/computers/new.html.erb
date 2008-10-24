@@ -24,7 +24,7 @@
 	    </p>
 	    <p>
 	      <label>USERS</label>
-		  <%= hardware_assign_form.collection_select :user_id, User.all, :id, :name %>
+		  <%= hardware_assign_form.collection_select :user_id, Department.dept_name('controller').first.users, :id, :name %>
 	    </p>
 	    <p>
 	      <label>PRIMARY COMPUTER</label>
