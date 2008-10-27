@@ -5,6 +5,9 @@
     <th>Control</th>
     <th>Serial</th>
     <th>Model</th>
+	<th>Department</th>
+	<th>User</th>
+	
   </tr>
 
 <% for computer in @computers %>
@@ -12,6 +15,8 @@
     <td><%=h computer.control %></td>
     <td><%=h computer.serial %></td>
     <td><%=h computer.model %></td>
+	<td><%=h computer.departments.first.name unless computer.departments.nil?  %></td>
+	<td><%=h computer.users.first.name unless computer.users.nil?  %></td>
     <td><%= link_to 'Show', computer %></td>
     <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
     <td><%= link_to 'Destroy', computer, :confirm => 'Are you sure?', :method => :delete %></td>
